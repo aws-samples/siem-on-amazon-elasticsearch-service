@@ -230,7 +230,12 @@ class LogS3:
             for lograw, logmeta in self.extract_cwl_log(start, end, logmeta):
                 logdict = self.rawfile_instacne.convert_lograw_to_dict(lograw)
                 if isinstance(logdict, dict):
-                    yield (lograw, logdict, logmeta)
+                    if self.logconfig["json_delimiter"]:
+                        # multiple events in 1 json
+                        for record in utils.value_from_nesteddict_by_dottedkey(logdict,self.logconfig["json_delimiter"]):
+                            yield (json.dumps(record, ensure_ascii=False), record, logmeta)
+                    else:
+                        yield (lograw, logdict, logmeta)
                 elif logdict == 'regex_error':
                     self.error_logs_count += 1
         elif self.via_firelens:
