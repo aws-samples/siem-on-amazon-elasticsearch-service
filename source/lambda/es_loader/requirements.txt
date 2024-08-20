@@ -1,4 +1,4 @@
-requests==2.31.0
+requests==2.32.0
 opensearch-py==2.5.0
 geoip2==4.8.0
 aws-lambda-powertools==2.26.0
