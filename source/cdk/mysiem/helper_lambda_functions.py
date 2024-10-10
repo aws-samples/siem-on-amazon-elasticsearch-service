@@ -63,7 +63,8 @@ class HelperLambdaFunctions(object):
                     statements=[
                         aws_iam.PolicyStatement(
                             actions=['lambda:UpdateFunctionConfiguration',
-                                     'lambda:GetFunction'],
+                                     'lambda:GetFunction',
+                                     'lambda:ListTags'],
                             resources=[self.lambda_es_loader.function_arn]),
                         aws_iam.PolicyStatement(
                             actions=['lambda:PublishLayerVersion'],

@@ -1406,6 +1406,7 @@ Resources:
               - Action:
                   - lambda:UpdateFunctionConfiguration
                   - lambda:GetFunction
+                  - lambda:ListTags
                 Effect: Allow
                 Resource: !GetAtt 'LambdaEsLoader4B1E2DD9.Arn'
               - Action: lambda:PublishLayerVersion
