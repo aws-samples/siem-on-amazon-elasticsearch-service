@@ -75,7 +75,7 @@ Then create a Lambda layer following the steps below:
    * Name: aes-siem-configure-es-loader (any name)
    * Check Upload a .zip file
    * Choose Upload and then select configure-es-loader.zip
-   * Compatible runtimes: Choose Python 3.8
+   * Compatible runtimes: Choose Python 3.11 (check current runtime version from **aes-siem-es-loader** layers pane)
 1. Choose [**Create**]
 
 Finally, add the Lambda layer that you have just created to Lambda function es-loader:
